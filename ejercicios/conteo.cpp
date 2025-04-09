@@ -140,7 +140,7 @@ int main(){
     }
     return 0;
 }
-    */
+    
 int main(){
     for(int fila = 5; fila >= 1; --fila){
         for(int col= 1; col <= fila; ++col){
@@ -148,4 +148,14 @@ int main(){
         }
         cout << endl;
     }
+}
+    */
+
+int main(){
+    for(int i = 1; i<=10; ++i){
+        int multiplicador = 3;
+        int resultado = multiplicador * i;
+        cout << i << " * " << multiplicador << " = " << resultado << endl;
+    }
+    return 0;
 }
