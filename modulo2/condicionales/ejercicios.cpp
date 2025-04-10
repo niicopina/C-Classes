@@ -16,6 +16,7 @@ int main(){
     } else {
         cout << "El 2do numero es mayor al primero" << endl;
     }
+
     //SWITCH
     cout << "Ahora veremos el Switch" << endl;
     int opcion;
@@ -33,6 +34,12 @@ int main(){
         break;
         default: cout << "Not a valid option";
         break;
+    }
+
+    //CICLOS FOR
+    cout << "Ahora veremos ciclos for, bucles..." << endl;
+    for(int i = 0; i <= 10; ++i){
+        cout << "Iteracion: " << i << endl;
     }
     return 0;
 }
