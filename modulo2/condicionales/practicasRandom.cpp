@@ -1,37 +1,32 @@
 #include <iostream>
-#include <ctime>
 #include <cstdlib>
+#include <ctime>
 using namespace std;
 
 int main(){
-    int limite_inf, limite_sup, intentos_max;
-    cout << "Juego de adivinanzas, ingresa el limite inferior, luego el superior: " << endl;
-    cin >> limite_inf;
-    cin >> limite_sup;
-    cout << "ahora ingrese la cantidad de intentos maximos que desea tener para adivinar: " << endl;
-    cin >> intentos_max;
+    int limite_inferior, limite_superior, intentos_max;
+    cout << "Ingrese en este orden: Limite inferior, limite superior e intentos maximos que desee: ";
+    cin >> limite_inferior >> limite_superior >> intentos_max;
 
     srand(time(nullptr));
+    int numero_aleatorio = limite_inferior + rand() % (limite_superior - limite_inferior -1);
 
-    int num_aleatorio = limite_inf + rand() % (limite_sup - limite_inf -1);
     int intentos, i;
     bool adivinado = false;
 
-    for(i = 0; i < intentos_max; ++i){
-        cout << "Intento " << (i + 1) << " / " << intentos_max << endl;
+    for(i = 0; i < intentos_max; i++){
+        cout << "Intento " << (i+1) <<" / " << intentos_max << " Ingrese un numero: " << endl;
         cin >> intentos;
-        if(intentos < num_aleatorio){
-            cout << "El numero es mayor" << endl;
-        } else if(intentos > num_aleatorio){
-            cout << "El numero es menor!" << endl;
-        } else {
-            cout << "Adivinaste!!" << endl;
+        if(intentos < numero_aleatorio){
+            cout << "el numero debe ser mayor" << endl;
+        }else if(intentos > numero_aleatorio){
+            cout << "el numero debe ser menor" << endl;
+        }else{
+            cout << "adivinaste u son of a bitch adivinaste" << endl;
             adivinado = true;
-            break;
         }
     }
     if(!adivinado){
-        cout << "Perdiste";
+        cout << "Game over hoe";
     }
-    
 }

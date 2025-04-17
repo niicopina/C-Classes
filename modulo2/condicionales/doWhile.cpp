@@ -2,13 +2,12 @@
 using namespace std;
 
 int main(){
-    int numSecreto = 5; 
-    int numUsuario;
-    do {
-        cout << "Trata de adivinar el numero que estoy pensando..." << endl;
-        cin >> numUsuario;
-    } while (numUsuario != numSecreto);
-
-    cout << "Lo adivinaste! vaya vaya...";
+    int numSecreto = 4;
+    int adivina;
+    do{
+        cout << "Intenta adivinar lo que piensooo: " ;
+        cin >> adivina;
+    } while(numSecreto != adivina);
+    cout << "Vaya eres un mago??";
     return 0;
 }
