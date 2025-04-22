@@ -14,6 +14,9 @@ void calentar_agua(){
 }
 void elegir_yerba(){
     int yerba = 0;
+    cout << "Elijamos la yerba dale?" << endl;
+    cout << "1 = Amanda, 2 = Playadito, 3 = Rosamonte" << endl;
+    cin >> yerba;
     switch (yerba){
     case 1: cout << "Amanda" << endl;
         break;
@@ -22,9 +25,6 @@ void elegir_yerba(){
     case 3: cout << "Rosamonte" << endl;
         break;
     }
-    cout << "Elijamos la yerba dale?" << endl;
-    cout << "1 = Amanda, 2 = Playadito, 3 = Rosamonte" << endl;
-    cin >> yerba;
 }
 void endulzar(){
     int dulce = 0;
@@ -44,6 +44,7 @@ void endulzar(){
         cout << "4. asi esta bien" << endl;
         cin >> dulce;
     }
+    cout << "Listo! El mate como te gusta!" << endl;
 }
 void cebar_mate(){
     cout << "Cebe ese matienso a ver que tul" << endl;
