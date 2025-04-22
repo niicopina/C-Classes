@@ -1,36 +1,34 @@
 #include <iostream>
 using namespace std;
 
-void servir_taza(){
-    cout << "Taza servida" << endl;
+void servir_cafe(){
+    cout << "Le sirvo el cafecito" << endl;
 }
 void hacer_cafe(){
-    cout << "Cafe hecho" << endl;
+    cout << "le preparo el cafe entonces" << endl;
 }
 void calentar_cafe(){
-    int caliente = 0;
-    while(caliente != 1){
-        cout << "Esta caliente el cafe?" << endl;
-        cout << "Indique 1 si es correcto o 2 para calentar" << endl;
-        cin >> caliente;
-        if(caliente != 1){
-            cout << "calentando cafe..." << endl;
+    int calentar = 0;
+    while(calentar != 1){
+        cout << "Indique 1 si esta bien caliente o 2 si quiere mas calor" << endl;
+        if(calentar != 1){
+            cout << "Calentando mas" << endl;
         }
     }
 }
-void endluzar(){
+void endulzar(){
     int dulce = 0;
     while(dulce != 3){
         switch(dulce){
-            case 1: cout << "agregando sugar..." << endl;
+            case 1: cout << "Agregando Azucar..." << endl;
             break;
-            case 2: cout << "agregando stevia..." << endl;
+            case 2: cout << "Agregando stevia..." << endl;
             break;
         }
-        cout << "esta bien asi?" << endl;
-        cout << "1. agregar azucar" << endl;
-        cout << "2. agregar edulco" << endl;
-        cout << "3. listo don asi esta bien" << endl;
+        cout << "Esta bien? joyaa" << endl;
+        cout << "1. Agregar Azucar" << endl;
+        cout << "2. Agregar Stevia" << endl;
+        cout << "3. Asi esta perfecto" << endl;
         cin >> dulce;
     }
 }
@@ -41,7 +39,7 @@ int main(){
     }else{
         calentar_cafe();
     }
-    servir_taza();
-    endluzar();
-    cout << "Disfruta tu cafe" << endl;
+    servir_cafe();
+    endulzar();
+    cout << "Disfrute su cafecitoo" << endl;
 }
