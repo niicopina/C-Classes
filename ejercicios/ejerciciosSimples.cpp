@@ -46,14 +46,23 @@ void numerosPositivos_negativos(){//contar cuántos números positivos y negativ
 
 void tabla_multiplicar(){
     int numero = 0;
+    int limite = 0;
     do{
-        cout << "ingrese un numero para ver su tabla de multiplicar (0 para salir): ";
+        cout << "ingresa un numero para ver su tabla de multiplicar (0 para salir): ";
         cin >> numero;
         if(numero != 0){
-            for(int i = 0; i <= 10; i++){
+            do{
+                cout << "ahora ingresa hasta que numero desea multiplicar: ";
+                cin >> limite;
+                if(limite <= 0){
+                    cout << "el limite debe ser mayor a 0. " << endl;
+                }
+            }while(limite <= 0);
+            
+            for(int i = 1; i <= limite; i++){
                 cout << numero << " x " << i << " = " << numero * i << endl;
-            }
-        } 
+            } 
+        }
     }while(numero != 0);
 }
 
