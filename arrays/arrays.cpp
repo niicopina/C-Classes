@@ -16,5 +16,4 @@ int main(){
             cout << " Curso aprobado" << endl;
         }
     }
-
 }
