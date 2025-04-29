@@ -95,6 +95,35 @@ void promedio_numeros(){
         cout << "posicion invalida" << endl;
     }
 }
+void inventario_numeros(){
+    const int max = 100;
+    int numeros[max];
+    int cantidad;
+    cout << "Ingrese cuantos numeros deseara tener en el inventario: ";
+    cin >> cantidad;
+    int pares = 0;
+    int impares = 0;
+    int mayor = -1;
+    if(cantidad >= 0 && cantidad <= 100){
+        for(int i = 0; i < cantidad; i++){
+            cout << "Ingrese el numero "<< i + 1 << ": ";
+            cin >> numeros[i];
+            if(numeros[i] % 2 == 0){
+                pares++;
+            }else{
+                impares++;
+            }
+            if(numeros[i] > mayor){
+                mayor = numeros[i];
+            }
+        }
+        cout << "La cantidad de numeros pares es: " << pares << endl;
+        cout << "La cantidad de impares es: " << impares << endl;
+        cout << "El numero mayor es: " << mayor << endl;
+    }else{
+        cout << "La cantidad debia ser mayor a 0 y menor igual a 100" << endl;
+    }
+}
 
 int main(){
     //par_impar();
