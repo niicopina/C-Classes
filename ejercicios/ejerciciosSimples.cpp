@@ -65,10 +65,35 @@ void tabla_multiplicar(){
         }
     }while(numero != 0);
 }
+void promedio_numeros(){
+    const int max = 100;
+    int numeros[max];
+    int cantidad;
+    cout << "ingrese cuantos numeros desee para sacar su promedio: ";
+    cin >> cantidad;
+    int suma = 0;
+    for(int i = 0; i<cantidad; i++){
+        cout << "ingrese el numero" << i +1 <<": ";
+        cin >> numeros[i];
+        suma += numeros[i];
+    } 
+    float promedio = (float)suma / cantidad;
+    cout << "el promedio de los numeros es: "<< promedio << endl;
+
+    cout << "indique que posicion del arreglo desea ver: ";
+    int posicion;
+    cin >> posicion;
+    if(posicion <= 0 && posicion < cantidad){
+        cout << "El numero en la posicion elegida " << posicion << " es: " << numeros[posicion] << endl;
+    }else{
+        cout << "posicion invalida" << endl;
+    }
+}
 
 int main(){
     //par_impar();
     //numero_mayor();
     //numerosPositivos_negativos();
-    tabla_multiplicar();
+    //tabla_multiplicar();
+    promedio_numeros();
 }
