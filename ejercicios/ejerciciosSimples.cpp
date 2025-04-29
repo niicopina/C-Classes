@@ -83,8 +83,14 @@ void promedio_numeros(){
     cout << "indique que posicion del arreglo desea ver: ";
     int posicion;
     cin >> posicion;
-    if(posicion <= 0 && posicion < cantidad){
+    if(posicion >= 0 && posicion < cantidad){
         cout << "El numero en la posicion elegida " << posicion << " es: " << numeros[posicion] << endl;
+        cout << "ahora modifique el numero en la posicion seleccionada: " << endl;
+        cin >> numeros[posicion];
+        cout << "El nuevo arreglo quedo asi: " << endl;
+        for(int i= 0; i < cantidad; i++){
+            cout << "posicion: "<< i << ": "<< numeros[i] << endl;
+        }
     }else{
         cout << "posicion invalida" << endl;
     }
