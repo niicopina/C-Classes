@@ -3,6 +3,24 @@
 #include <ctime>
 using namespace std;
 
+const int MAX_NUMEROS = 100;
+
+bool numeroIngresado(const int numeros[], int numero, int size){
+   for(int i = 0; i < size; i++){
+      if(numeros[i] == numero){
+         return true;
+      }
+   }
+   return false;
+}
+
+void mostrarNumeroIngresado(const int numeros[], int size){
+   cout << "El numero ingresado fue: ";
+   for(int i = 0; i < size; i++){
+      cout << numeros[i] << ", ";
+   }
+}
+
 int main(){
     int limite_inferior, limite_superior, intentos_max; //El usuario seleccionará los rangos deseados
     cout <<"Este es un juego de adivinanzas. Debes adivinar el numero generado aleaotriamente. Tu indicaras entre que numeros \n";
@@ -11,6 +29,7 @@ int main(){
     cin >> limite_inferior;
     cout <<"Ingresa el numero para el limite superior: \n";
     cin >> limite_superior;
+
     //validacion de los limites
     while(limite_inferior >= limite_superior){
       cout << "El limite inferior debe ser menor al limite superior, ingreselo denuevo" << endl;
