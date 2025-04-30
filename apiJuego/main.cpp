@@ -51,10 +51,14 @@ int main(){
     srand(time(nullptr)); //Llamo a srand de la libreria
 
     int numero_aleatorio = limite_inferior + rand() % (limite_superior - limite_inferior +1); //Se genera el numero aleatorio teniendo en cuenta los limites del usuario
+    
     int intento, i;
     bool adivinado = false;
+    int numeros_ingresados[MAX_NUMEROS];
+    int numeros_ingresados_size = 0;
 
-    for(i = 0; i < intentos_max; ++i){ //un ciclo for con condicionales para ir restando la cantidad de intentos, que ademas le da pistas al usuario
+    //Bulce adivinanza
+    for(i = 0; i < intentos_max; ++i){ 
         cout <<"Intento "<< (i + 1) << "/" << intentos_max << " Ingresa un numero para adivinar: ";
         cin >> intento;
 
@@ -64,6 +68,15 @@ int main(){
          --i;
          continue;
         }
+        //verificamos duplicados
+        if(numeroIngresado(numeros_ingresados, intento, numeros_ingresados_size)){
+         cout << "Ese numero ya fue ingresado" << endl;
+         --i;
+         continue;
+        }
+        //incrementamos el numero de intentos
+        numeros_ingresados[numeros_ingresados_size++] = intento;
+        mostrarNumeroIngresado(numeros_ingresados, numeros_ingresados_size); //muestra los numeros ingresados
 
          if (intento < numero_aleatorio){
             cout << "El numero es mayor. Intentalo de nuevo! \n";
@@ -77,8 +90,8 @@ int main(){
          }
     }
     if(!adivinado){
-        cout <<"GAME OVER - Has agotado todos los intentos posibles. ¿Quieres intentarlo de nuevo?";
-        return 0;
+        cout <<"GAME OVER - Has agotado todos los intentos posibles. El numero secreto era: " << numero_aleatorio <<"¿Quieres intentarlo de nuevo?";
+        mostrarNumeroIngresado(numeros_ingresados, numeros_ingresados_size);
     }
-
+    return 0;
 }
