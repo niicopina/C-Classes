@@ -90,7 +90,7 @@ int main(){
          }
     }
     if(!adivinado){
-        cout <<"GAME OVER - Has agotado todos los intentos posibles. El numero secreto era: " << numero_aleatorio <<"¿Quieres intentarlo de nuevo?";
+        cout <<"GAME OVER - Has agotado todos los intentos posibles. El numero secreto era: " << numero_aleatorio <<" Quieres intentarlo de nuevo?";
         mostrarNumeroIngresado(numeros_ingresados, numeros_ingresados_size);
     }
     return 0;
