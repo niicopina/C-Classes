@@ -155,5 +155,5 @@ void metodos_pago(){
 }
 
 int main(){
-    
+    metodos_pago();
 }
