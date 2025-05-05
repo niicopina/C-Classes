@@ -2,17 +2,17 @@
 using namespace std;
 
 //Productos
-const int MAX_PROD = 100;
+const int MAX_PROD = 5;
 struct Producto {
     string nombre;
     double precio;
 };
 Producto productos[MAX_PROD] = {
-    {"Tv", 1000000},
-    {"PC", 955000},
-    {"AAC", 1200000},
-    {"SPK", 560000},
-    {"GPU", 460000}
+    {"Tv", 10000},
+    {"PC", 9550},
+    {"AAC", 12000},
+    {"SPK", 5600},
+    {"GPU", 4600}
 };
 
 //metodos de pago
@@ -32,10 +32,10 @@ int main(){
         cout << i + 1<< ". " << productos[i].nombre << " - $"<<productos[i].precio << endl;
     }
     //seleccion productos
-    double subtotal;
+    double subtotal = 0;
     int opcion;
     do{
-        cout << "Añada productos al carro de compras (0 para salir): " << endl;
+        cout << "Agregue productos al carro de compras (0 para salir): " << endl;
         cin >> opcion;
         if(opcion >= 1 && opcion <= MAX_PROD){
             subtotal += productos[opcion -1].precio;
@@ -49,11 +49,11 @@ int main(){
     cout << "Subtotal = " << subtotal << endl;
 
     int metodo_pago;
-    cout << "\nSeleccione método de pago:\n";
+    cout << "\nSeleccione metodo de pago:\n";
     cout << "1. Transferencia (20 de descuento)\n";
-    cout << "2. Débito (10 de descuento)\n";
-    cout << "3. Crédito (5 de recargo)\n";
-    cout << "Opción: ";
+    cout << "2. Debito (10 de descuento)\n";
+    cout << "3. Credito (5 de recargo)\n";
+    cout << "Opcion: ";
     cin >> metodo_pago;
     double total;
 
