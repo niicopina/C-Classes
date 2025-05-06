@@ -8,14 +8,14 @@ const int MAX_NUMEROS = 100;
 bool numeroIngresado(const int numeros[], int numero, int size){
    for(int i = 0; i < size; i++){
       if(numeros[i] == numero){
-         return true;
+         return true; //si el intento es un numero repetido retorna true osea que el numero ya fue ingresado
       }
    }
    return false;
 }
 
 void mostrarNumeroIngresado(const int numeros[], int size){
-   cout << "El numero ingresado fue: ";
+   cout << "Los numeros que ingresaste fueron: ";
    for(int i = 0; i < size; i++){
       cout << numeros[i] << ", ";
    }
@@ -79,9 +79,9 @@ int main(){
         mostrarNumeroIngresado(numeros_ingresados, numeros_ingresados_size); //muestra los numeros ingresados
 
          if (intento < numero_aleatorio){
-            cout << "El numero es mayor. Intentalo de nuevo! \n";
+            cout << "El numero secreto es mayor. Intentalo de nuevo! \n";
          } else if(intento > numero_aleatorio){
-            cout << "El numero es menor. Vamos, tu puedes! \n";
+            cout << "El numero secreto es menor. Vamos, tu puedes! \n";
          } else {
             cout <<"¡Felicidades! Has adivinado el numero! :D. \n";
             cout <<"Que dices, le subimos la dificultad?";
@@ -90,7 +90,8 @@ int main(){
          }
     }
     if(!adivinado){
-        cout <<"GAME OVER - Has agotado todos los intentos posibles. El numero secreto era: " << numero_aleatorio <<" Quieres intentarlo de nuevo?";
+        cout <<"GAME OVER - El numero secreto era: " 
+         << numero_aleatorio << endl;
         mostrarNumeroIngresado(numeros_ingresados, numeros_ingresados_size);
     }
     return 0;
