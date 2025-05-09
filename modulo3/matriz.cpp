@@ -22,4 +22,17 @@ int main(){
             cout << equipos[i][j] << ", " << endl;
         }
     }
+
+    cout << "Ahora seleccione un alumno en particular usando la posicion de la matriz" << endl;
+    cout << "Primero el equipo (0, 1 o 2): ";
+    int equipo;
+    cin >> equipo;
+    cout << "Ahora la posicion en la lista: ";
+    int posicion;
+    cin >> posicion;
+    if(equipo >= 1 && equipo <= 3 && posicion < cant_alumnos){
+        cout << "selecciono " << equipos[equipo][posicion] << endl;
+    }else{
+        cout << "equipo o posicion de lista erroneasss";
+    }
 }
