@@ -21,6 +21,16 @@ void mostrarNumeroIngresado(const int numeros[], int size){
    }
 }
 
+void ordenarNumeros(int numeros[], int size){
+   for(int i = 0; i < size - 1; i++){
+      for(int j = 0; j < size - i - 1; j++){
+         if(numeros[j] > numeros[j + 1]){
+            swap(numeros[j], numeros[j + 1]);
+         }
+      }
+   }
+}
+
 int main(){
     int limite_inferior, limite_superior, intentos_max; //El usuario seleccionará los rangos deseados
     cout <<"Este es un juego de adivinanzas. Debes adivinar el numero generado aleaotriamente. Tu indicaras entre que numeros \n";
@@ -77,14 +87,14 @@ int main(){
         //incrementamos el numero de intentos
         numeros_ingresados[numeros_ingresados_size++] = intento;
         mostrarNumeroIngresado(numeros_ingresados, numeros_ingresados_size); //muestra los numeros ingresados
-
+        cout << endl;
          if (intento < numero_aleatorio){
             cout << "El numero secreto es mayor. Intentalo de nuevo! \n";
          } else if(intento > numero_aleatorio){
             cout << "El numero secreto es menor. Vamos, tu puedes! \n";
          } else {
             cout <<"¡Felicidades! Has adivinado el numero! :D. \n";
-            cout <<"Que dices, le subimos la dificultad?";
+            cout <<"Que dices, le subimos la dificultad?" << endl;
             adivinado = true;
             break;
          }
@@ -92,7 +102,11 @@ int main(){
     if(!adivinado){
         cout <<"GAME OVER - El numero secreto era: " 
          << numero_aleatorio << endl;
-        mostrarNumeroIngresado(numeros_ingresados, numeros_ingresados_size);
+        //mostrarNumeroIngresado(numeros_ingresados, numeros_ingresados_size);
     }
+   
+    ordenarNumeros(numeros_ingresados, numeros_ingresados_size);
+    mostrarNumeroIngresado(numeros_ingresados, numeros_ingresados_size);
+    cout << endl;
     return 0;
 }
