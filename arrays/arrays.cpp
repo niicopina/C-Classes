@@ -3,31 +3,44 @@
 using namespace std;
 
 int main(){
-    const int CANT_ALUMNOS  = 5;
-    string alumnos[CANT_ALUMNOS];
+    const int cantidad_alumnos = 5;
+    string alumnos[cantidad_alumnos];
     cout << "Ingrese el nombre de cada alumno: " << endl;
-    for(int i = 0; i < CANT_ALUMNOS; i++){
-        getline(cin,alumnos[i]);
+    for(int i = 0; i < cantidad_alumnos; i++){
+        getline(cin, alumnos[i]);
     }
     cout << "El listado de alumnos queda asi: " << endl;
-    for(int i = 0; i < CANT_ALUMNOS; i++){
-        cout << alumnos[i] << endl;
+    for(int i = 0; i < cantidad_alumnos; i++){
+        cout << i << "Nombre: " <<  alumnos[i] << endl;
     }
-    cout << "Si desea modificar un alumno elija su posicion en la lista: " << endl;
-    int posicion;
-    cin >> posicion;
-    cin.ignore();
+    int opcion;
+    do{
+        cout << "Desea modificar un alumno?" << endl;
+        cout << "1. SI" << endl;
+        cout << "2. NO" << endl;
+        cout << "Opcion: ";
+        cin >> opcion;
 
-    if(posicion >= 0 && posicion < CANT_ALUMNOS){
-        cout << "La posicion elegida es " << posicion << " - Nombre: " << alumnos[posicion] << endl;
-        cout << "Ingrese la modificacion -> ";
-        getline(cin, alumnos[posicion]); 
-    }else{
-        cout << "Posicion invalida, elija entre 0 y 4..." << endl;
-        cin >> posicion;
-    }
-    cout << "La lista modificada queda asi: " << endl;
-    for(int i = 0; i < CANT_ALUMNOS; i++){
-        cout << "Posicion: " << i +1 << " - Nombre: " << alumnos[i] << endl;
+        if(opcion == 1){
+            cout << "Para modificarlo elija primero su posicion en la lista: ";
+            int posicion;
+            cin >> posicion;
+            cin.ignore();
+            if(posicion >= 0 && posicion < cantidad_alumnos){
+                cout << "La posicion " << posicion << " corresponde al alumno: " << alumnos[posicion] << endl;
+                cout << "Ingrese la modificacion: ";
+                getline(cin, alumnos[posicion]);
+            }else{
+                cout << "Posicion invalida, intente de nuevo: ";
+                cin >> posicion;
+            }
+            cout << "Se ha modificado el alumno" << endl;
+            cout << "Desea hacer otra modificacion? ";
+            cin >> opcion;
+        }
+    }while(opcion != 2);
+    cout << "- Lista de alumnos -" << endl;
+    for(int i = 0; i < cantidad_alumnos; i++){
+        cout << i << " Nombre: " << alumnos[i] << endl;
     }
 }
