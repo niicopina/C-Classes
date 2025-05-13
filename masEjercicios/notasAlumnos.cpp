@@ -1,5 +1,4 @@
 #include <iostream>
-#include <string>
 using namespace std;
 
 int main(){
@@ -7,24 +6,25 @@ int main(){
     cout << "Ingrese la cantidad de alumnos: ";
     cin >> cantidad_alumnos;
 
-    float* notas_alumnos = new float[cantidad_alumnos];
+    float* notas = new float[cantidad_alumnos];
     float suma = 0;
-    float nota_maxima = 0;
+    float nota_max = 0;
 
     for(int i = 0; i < cantidad_alumnos; i++){
-        cout << "Ingrese la nota del alumno" << i + 1 << ": ";
-        cin >> notas_alumnos[i];
-        suma += notas_alumnos[i];
-        if(notas_alumnos[i] > nota_maxima){
-            nota_maxima = notas_alumnos[i];
+        cout << "Ingrese las notas: "<< endl;
+        cin >> notas[i];
+        suma += notas[i];
+        if(notas[i] > nota_max){
+            nota_max = notas[i];
         }
     }
-    cout << "Notas ingresadas: " << endl;
-    for(int i = 0; i < cantidad_alumnos; i++){
-        cout << notas_alumnos[i] << " " << endl;
-    }
     float promedio = (float)suma / cantidad_alumnos;
-    cout << "El promedio de las notas es: " << promedio << endl;
-    cout << "La nota mas alta fue: " << nota_maxima << endl;
+
+    cout << "Las notas ingresadas fueron: " << endl;
+    for(int i = 0; i < cantidad_alumnos; i++){
+        cout << notas[i] << " " << endl;
+    }
+    cout << "El promedio de las notas es = " << promedio << endl;
+    cout << "La nota mas alta fue = " << nota_max;
 
 }
