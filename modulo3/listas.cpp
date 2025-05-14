@@ -21,4 +21,24 @@ int main(){
     for(int i = 0; i < mivector.size(); i++){
         cout << mivector[i] << endl;
     }
+    cout << "*********************" << endl;
+
+    int array[6] = {9, 10, 43, 56, 12, 5};
+    for(int i = 0; i < 6; i++){
+        cout << " i vale " << i << endl;
+        for(int j = 0; j < 6; j++){
+            cout << " j vale " << j << endl;
+            int a = array[i];
+            cout << "el array en la posicion " << i << " es " << array[i] << endl;
+            cout << "el array en la posicion " << j << " es " << array[j] << endl;
+            if(array[j] > a){
+                cout << "Array en j es > arreglo en i" << endl;
+                array[i] = array[j];
+                array[j] = a;
+            }
+        }
+    }
+    for(int i = 0; i < 6; i++){
+        cout << array[i] << endl;
+    }
 }
