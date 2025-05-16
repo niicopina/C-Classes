@@ -34,7 +34,44 @@ int main(){
             cin >> cant_vendidas[i];
         }
     }
-    cout << "El registro de productos:" << endl;
+    cout << "Antes de continuar revisa la lista: " << endl;
+    for(int i = 0; i < cantidad_productos; i++){
+        cout << "Producto " << i+1 << endl;
+        cout << "Nombre: " << nombres[i]
+             << " | Precio: $" << precios[i]
+             << " | ud. vendidas: " << cant_vendidas[i]
+             << endl;
+    }
+    int opcion;
+    do{
+        cout << "Desea modificar un producto?" << endl;
+        cout << "1. SI" << endl;
+        cout << "2. NO" << endl;
+        cout << "Opcion: ";
+        cin >> opcion;
+        if(opcion == 1){
+            int posicion;
+            do{
+                cout << "Para modificarlo ingrese su posicion en la lista (1 a" 
+                     << cantidad_productos << "):";
+                cin >> posicion;
+                posicion--;
+            }while(posicion < 0 || posicion >= cantidad_productos);
+            cout << "La posicion " << posicion + 1
+                 << " corresponde al producto: "
+                 << nombres[posicion] << endl;
+            cout << "Ingrese la modificacion:" << endl;
+            cout << "Nombre: ";
+            cin.ignore();
+            getline(cin, nombres[posicion]);
+            cout << "Precio: $";
+            cin >> precios[posicion];
+            cout << "Unidades vendidas: ";
+            cin >> cant_vendidas[posicion];
+        }
+    }while(opcion != 2);
+    cout << endl;
+    cout << " ---Registro de productos---" << endl;
     float total_recaudado = 0;
     int indiceMasVendido = 0;
     for(int i = 0; i < cantidad_productos; i++){
