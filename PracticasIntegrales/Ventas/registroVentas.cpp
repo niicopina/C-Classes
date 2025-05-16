@@ -34,4 +34,27 @@ int main(){
             cin >> cant_vendidas[i];
         }
     }
+    cout << "El registro de productos:" << endl;
+    float total_recaudado = 0;
+    int indiceMasVendido = 0;
+    for(int i = 0; i < cantidad_productos; i++){
+        float total = precios[i] * cant_vendidas[i];
+        total_recaudado += total;
+
+        cout << "Producto: " << i + 1 << endl;
+        cout << "Nombre: " << nombres[i] 
+             << " - $" << precios[i]
+             << " -- Vendidos = " 
+             << cant_vendidas[i] 
+             << "| Total recaudado = $" << total
+             << endl;
+        if(cant_vendidas[i] > cant_vendidas[indiceMasVendido]){
+            indiceMasVendido = i;
+        }
+    }
+    cout << " -- Estadisticas -- " << endl;
+    cout << "Total recaudado en la semana: $" << total_recaudado << endl;
+    cout << "Producto mas vendido: " << nombres[indiceMasVendido]
+         << ", con " << cant_vendidas[indiceMasVendido] << " unidades."
+         << endl;
 }
