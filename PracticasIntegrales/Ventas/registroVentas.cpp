@@ -2,6 +2,42 @@
 #include <string>
 using namespace std;
 
+//Funciones
+float recaudacionSemanal(const float precios[], const float cant_vendidas[], int cantidad){
+    float total = 0;
+    for(int i = 0; i < cantidad; i++){
+        total += precios[i] * cant_vendidas[i];
+    }
+    return total;
+}
+
+int mostrarProductos(const string nombres[], const float precios[], const float cant_vendidas[], int cantidad){
+    int indiceMasVendido = 0;
+    cout << "--Registro de Productos--" << endl;
+    for(int i = 0; i < cantidad; i++){
+        float total = precios[i] * cant_vendidas[i];
+        cout << "Producto: " << i + 1 << endl;
+        cout << "Nombre: " << nombres[i] 
+             << " - $" << precios[i]
+             << " -- Vendidos = " 
+             << cant_vendidas[i] 
+             << "| Total recaudado por producto = $" << total
+             << endl;
+        if(cant_vendidas[i] > cant_vendidas[indiceMasVendido]){
+            indiceMasVendido = i;
+        }
+    }
+    return indiceMasVendido;
+}
+
+void mostrarEstadisticas(float total, const string nombres[], const float cant_vendidas[], int indice){
+    cout << " -- Estadisticas -- " << endl;
+    cout << "Total recaudado en la semana: $" << total << endl;
+    cout << "Producto mas vendido: " << nombres[indice]
+         << ", con " << cant_vendidas[indice] << " unidades."
+         << endl;
+}
+
 int main(){
     const int MAX_PROD = 100;
     int cantidad_productos;
@@ -71,27 +107,7 @@ int main(){
         }
     }while(opcion != 2);
     cout << endl;
-    cout << " ---Registro de productos---" << endl;
-    float total_recaudado = 0;
-    int indiceMasVendido = 0;
-    for(int i = 0; i < cantidad_productos; i++){
-        float total = precios[i] * cant_vendidas[i];
-        total_recaudado += total;
-
-        cout << "Producto: " << i + 1 << endl;
-        cout << "Nombre: " << nombres[i] 
-             << " - $" << precios[i]
-             << " -- Vendidos = " 
-             << cant_vendidas[i] 
-             << "| Total recaudado = $" << total
-             << endl;
-        if(cant_vendidas[i] > cant_vendidas[indiceMasVendido]){
-            indiceMasVendido = i;
-        }
-    }
-    cout << " -- Estadisticas -- " << endl;
-    cout << "Total recaudado en la semana: $" << total_recaudado << endl;
-    cout << "Producto mas vendido: " << nombres[indiceMasVendido]
-         << ", con " << cant_vendidas[indiceMasVendido] << " unidades."
-         << endl;
+    int indiceMasVendido = mostrarProductos(nombres, precios, cant_vendidas, cantidad_productos);
+    float total_recaudado = recaudacionSemanal(precios, cant_vendidas, cantidad_productos);
+    mostrarEstadisticas(total_recaudado, nombres, cant_vendidas, indiceMasVendido);
 }
