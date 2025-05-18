@@ -16,7 +16,6 @@ class Mascotas{
         void set_raza(string variable){
             raza = variable;
         }
-
         int get_peso(){
             return peso;
         }
@@ -30,6 +29,10 @@ class Mascotas{
         }
 };
 int main(){
+    string nombre;
+    string raza;
+    double peso;
+    
     Mascotas miMascota;
     miMascota.set_nombre("Alfonsina");
     miMascota.set_raza("P.P");
@@ -39,8 +42,14 @@ int main(){
     cout << "----------------------" << endl;
 
     Mascotas ramaMascota;
-    ramaMascota.set_nombre("Amapola");
-    ramaMascota.set_raza("P.P");
-    ramaMascota.set_peso(13);
+    cout << "Ingrese el nombre: ";
+    cin >> nombre;
+    cout << "Ingrese la raza: ";
+    cin >> raza;
+    cout << "Ingrese su peso: ";
+    cin >> peso;
+    ramaMascota.set_nombre(nombre);
+    ramaMascota.set_raza(raza);
+    ramaMascota.set_peso(peso);
     ramaMascota.mostrar();
 }
