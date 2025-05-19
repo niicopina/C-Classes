@@ -2,6 +2,8 @@
 #include <string>
 using namespace std;
 
+const int MAX_ALUMNOS = 10;
+
 class Alumnos{
     string nombre;
     int dni;
@@ -25,17 +27,34 @@ class Alumnos{
     }
 };
 int main(){
+    Alumnos listaAlumnos[MAX_ALUMNOS];
+    int cantidad = 0;
     string nombre;
     int dni;
+    char opcion;
 
-    Alumnos alumno1;
-    cout << "Ingrese el nombre: ";
-    cin >> nombre;
-    alumno1.set_nombre(nombre);
-    cout << "Ingrese DNI: ";
-    cin >> dni;
-    alumno1.set_dni(dni);
-    cout << "La informacion del alumno ingresada es: " << endl;
-    alumno1.mostrar();
+    do{
+        if(cantidad >= MAX_ALUMNOS){
+            cout << "Se alcanzo el limite de alumnos.";
+            break;
+        }
+        cout << "Ingrese el nombre: ";
+        cin >> nombre;
+        cout << "Ingrese DNI: ";
+        cin >> dni;
 
+        listaAlumnos[cantidad].set_nombre(nombre);
+        listaAlumnos[cantidad].set_dni(dni);
+        cantidad++;
+
+        cout << "Desea agregar otro alumno? ( s / n )";
+        cin >> opcion;
+    }while(opcion == 's' || opcion == 's');
+
+    cout << " << Lista de alumnos ingresada >> " << endl;
+    for(int i = 0; i < cantidad; i++){
+        cout << "Alumno " << i + 1 << ": " << endl;
+        listaAlumnos[i].mostrar();
+        cout << endl;
+    }
 }
