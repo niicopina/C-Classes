@@ -41,4 +41,16 @@ Tiene distintas fases:
     Factibilidad de las necesidades.
 2- Analisis, determinación de requerimientos. Se define el alcance de la solución (que sí se desarrolla y qué no). Se determinan 
     las entradas y salidas del proceso software, cómo funcionará, qué datos necesita y qué salida debe generar (eficaz y eficiente)
-3- 
+3- Problemón -> Problemitas -> Algoritmo -> Diagrama de flujo -> Pseudocodigo -> codigo (Diseño de solución, diseño del sistema)
+4- Desarrollo. Conjunto de reglas que proporciona una forma de instruir a la compu qué operaciones debe realizar en un lenguaje específico
+5- Prueba, depuración. Detectar y localizar problemas. Corregir errores usando casos de prueba.
+6- Documentación (proceso continuo). Contiene el origen y naturaleza del problema, descripto en diagramas de flujo, registro de datos
+    resultados de las pruebas y comentarios dentro del código.
+7- Mantenimiento / Evolución. Actualizaciones y prevenciones.
+
+El Programa debe ser: 
+Usable: Fácil de usar asi las personas a las que está destinado pueden comprender su manejo de manera intuitiva, sin
+        esfuerzos innecesarios.
+Mantenible: El código fuente del programa permite localizar y corregir defectos rápidamente, así como también permite 
+            hacer cambios que resultan más fáciles para adaptarlo a las necesidades cambiantes de los usuarios.
+Fiable: Es fiable si realiza sus tareas cuando es necesario, con la precisión requerida y brinda la salida esperada.
