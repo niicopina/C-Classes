@@ -1,0 +1,29 @@
+//LOGICA
+
+La logica puede ser definida como una disciplina que formaliza el estudio de los metodos de razonamientos. Es un conjunto de tecnicas 
+y teoremas que nos permiten modelar y definir formas de razonar. Las estructuras de pensamiento y las reglas que las gobiernan son
+estudiadas en la logica. Los objetivos son eliminar la ambiguedad del lenguaje natural y establecer reglas que determinen la validez
+de un razonamiento. El computador no es capaz de interpretar por lo que mientras menor sea la ambiguedad del codigo, mejores seran.
+
+Existen dos conceptos fundamentales en la logica: el Juicio y la proposicion. El juicio es el acto mental mediante el cual pensamos un determinado 
+enunciado mientras que la proposicion es lo que se piensa en dicho acto (son enunciados aseverativos que transmiten informacion).
+La proposicion tiene la caracteristica fundamental de que debe poderse definir si es Verdadera o Falsa en un momento del tiempo.
+
+Una proposicion logica es toda oracion declarativa que piede decirse si es Verdadera o Falsa. Si existen dos proposiciones contradictorias entre si
+solo una puede ser Verdadera, o solo una Falsa.
+Todas son identicas en si mismas, el objetivo  de la logica proposicional no es detrerminar si algo es o no Verdadero o Falso, sino mas bien
+las estructuras en las que las proposiciones intervienen y las reglas que regulan las combinaciones
+
+AND = .
+OR = +
+NOT = '
+
+//ALGORITMO
+
+Es un conjunto definido de instrucciones con un orden y una cantidad determinada de pasos finitos. Los algoritmos permiten
+llevar a cabo una actividad mediante pasos sucesivos que no generan dudas a quien deba realizar dicha actividad.
+Son Ordenados, Definidos y Finitos
+Necesitan de una Entrada (informacion primera), un Proceso (procesa estos datos, manipula esa informacion) y una Salida (resultado)
+Pueden dividirse entre:
+ - Busqueda: Se encargan de encontrar determinado item dentro de un conjunto (google, sql, buscador archivos)
+ - Ordenamiento: Ordena un conjunto de valores
