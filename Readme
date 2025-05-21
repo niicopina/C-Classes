@@ -26,4 +26,19 @@ Son Ordenados, Definidos y Finitos
 Necesitan de una Entrada (informacion primera), un Proceso (procesa estos datos, manipula esa informacion) y una Salida (resultado)
 Pueden dividirse entre:
  - Busqueda: Se encargan de encontrar determinado item dentro de un conjunto (google, sql, buscador archivos)
- - Ordenamiento: Ordena un conjunto de valores
+ - Ordenamiento: Ordena un conjunto de valores con criterio especifico (alfabeticamente, orden numerico, primos, etc)
+ - Encaminamiento: Buscan como debe ser la trayectoria de un punto a otro de manera optimizada (maps, etc)
+Tambien se pueden dividir segun su estrategia:
+ - Determinista: Pasos lineales. Excepto el 1ro, cada paso tiene un predecesor y un sucesor, Excepto el ultimo claro. No hay alternativos.
+ - Probabilistico: Utiliza valores pseudoaleatorios como entrada para llegar a una solicion. Estros ejecutan una cantidad suficiente como
+                   para determinar un nivel de confianza en el resultado
+ - Voraz: Evaluan cada una de las posibilidades y eligen la mejor.
+
+Un programa debe ser Eficaz, Eficiente, Integro, Claro y Portable
+
+Tiene distintas fases:
+1- Conocer el problema e identificar las necesidades. Quién es el usuario final, cómo opera con el sistema, qué resultados espera.
+    Factibilidad de las necesidades.
+2- Analisis, determinación de requerimientos. Se define el alcance de la solución (que sí se desarrolla y qué no). Se determinan 
+    las entradas y salidas del proceso software, cómo funcionará, qué datos necesita y qué salida debe generar (eficaz y eficiente)
+3- 
