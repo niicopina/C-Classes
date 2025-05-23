@@ -35,4 +35,6 @@ int main(){
             mejorEquipo = equipo[i];
         }
     }
+    cout << "El mejor equipo de la temporada es: "
+         << mejorEquipo << " con un " << mejorPromedio << " promedio de goles" << endl;
 }
