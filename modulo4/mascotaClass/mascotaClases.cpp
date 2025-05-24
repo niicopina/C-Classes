@@ -2,6 +2,7 @@
 using namespace std;
 
 class Mascotas{
+    public: 
     double peso;
     string nombre;
     string raza;
@@ -28,16 +29,25 @@ class Mascotas{
             cout << "Peso: " << peso << endl;
         }
 };
+
+class Perros : public Mascotas{
+    public: 
+    void ladrar(){
+        cout << "Woof Woof!" << endl;
+    }
+};
+
 int main(){
     string nombre;
     string raza;
     double peso;
     
-    Mascotas miMascota;
+    Perros miMascota;
     miMascota.set_nombre("Alfonsina");
     miMascota.set_raza("P.P");
     miMascota.set_peso(8.6);
     miMascota.mostrar();
+    miMascota.ladrar(); // metodo exclusivo de clase Perro
 
     cout << "----------------------" << endl;
 
