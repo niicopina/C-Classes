@@ -29,16 +29,6 @@ class Mascotas{
             cout << "Peso: " << peso << endl;
         }
 };
-
-class Perros : public Mascotas{
-    public: 
-    void ladrar(){
-        cout << "Woof Woof!" << endl;
-    }
-    void saludarGato(Gatos variable){
-        variable.responderSaludo();
-    }
-};
 class Gatos : public Mascotas{
     public:
     void maullar(){
@@ -46,6 +36,16 @@ class Gatos : public Mascotas{
     }
     void responderSaludo(){
         cout << "Hola, soy "<< this -> get_nombre() << endl;
+    }
+};
+class Perros : public Mascotas{
+    public: 
+    void ladrar(){
+        cout << "Woof Woof!" << endl;
+    }
+    void saludarGato(Gatos variable){
+        cout << "Hola " << ", soy "<< this -> get_nombre() << endl;
+        variable.responderSaludo();
     }
 };
 
@@ -66,19 +66,20 @@ int main(){
     Perros ramaMascota;
     cout << "Ingrese el nombre: ";
     cin >> nombre;
-    cout << "Ingrese la raza: ";
-    cin >> raza;
-    cout << "Ingrese su peso: ";
+    cout << "Ingrese la peso: ";
     cin >> peso;
+    cout << "Ingrese su raza: ";
+    cin >> raza;
     ramaMascota.set_nombre(nombre);
-    ramaMascota.set_raza(raza);
     ramaMascota.set_peso(peso);
+    ramaMascota.set_raza(raza);
     cout << endl;
     cout << "La mascota de Rama:" << endl;
     ramaMascota.mostrar();
     ramaMascota.ladrar();
 
     cout << endl;
+
     Gatos almenGatos;
     cout << "Ingrese el nombre: ";
     cin >> nombre;
@@ -93,4 +94,5 @@ int main(){
     cout << "La mascota de Almen: " << endl;
     almenGatos.mostrar();
     almenGatos.maullar();
+    miMascota.saludarGato(almenGatos);
 }
