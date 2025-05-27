@@ -28,15 +28,15 @@ class Mascota {
         }
     }
     void cazar(){
-        if(energia >= 50){
-            energia -= 50;
+        if(energia >= 150){
+            energia -= 150;
             cout << nombre << " ha cazado, Que bestia! Energia restante: "
                  << energia << endl;
         }else{
             cout << nombre << " no tiene suficiente energia para cazar" << endl;
         }
     }
-    void descansar(){
+    virtual void descansar(){
         cout << nombre << " esta descansando un poco..." << endl;
         energia += 300;
     }
@@ -55,6 +55,11 @@ class Dragon : public Mascota{
         energia = 1500;
         set_raza("Dragon");
     }
+    void descansar() override{
+        cout << nombre << ", duerme en su cueva... +400 energia" << endl;
+        energia += 400;
+        if(energia > 1500) energia = 1500;
+    }
 };
 class Warewolf : public Mascota{
     public:
@@ -63,13 +68,23 @@ class Warewolf : public Mascota{
         energia = 600;
         set_raza("Warewolf");
     }
+    void descansar() override{
+        cout << nombre << " , duerme en el bosque... +200 energia" << endl;
+        energia += 200;
+        if(energia > 600) energia = 600;
+    }
 };
 class Vampire : public Mascota{
     public:
     Vampire(){
         vida = 1300;
-        energia = 400;
+        energia = 500;
         set_raza("Vampire");
+    }
+    void descansar() override{
+        cout << nombre << " , duerme en su castillo... +200 energia" << endl;
+        energia += 200;
+        if(energia > 500) energia = 500;
     }
 };
 int main(){
@@ -105,19 +120,23 @@ int main(){
     do{
         cout << "Que quieres hacer?" << endl;
         cout << "1. Caminar (-10 energia)" << endl;
-        cout << "2. Mostrar estado" << endl;
-        cout << "3. Salir" << endl;
+        cout << "2. Cazar (-150 energia)" << endl;
+        cout << "3. Descansar" << endl;
+        cout << "4. Mostrar estado" << endl;
+        cout << "5. Salir" << endl;
         cout << "Elige una opcion: ";
         cin >> accion;
         switch(accion){
             case 1: miMascota->caminar(); break;
-            case 2: miMascota->mostrar_datos(); break;
-            case 3: cout << "Fin del juego"; break;
+            case 2: miMascota->cazar(); break;
+            case 3: miMascota->descansar(); break;
+            case 4: miMascota->mostrar_datos(); break;
+            case 5: cout << "Salir"; break;
             default: cout << "Opcion invalida" << endl;
         }
         if(miMascota->energia == 0){
             cout << miMascota->nombre << " se quedo sin energia, game over" << endl;
             break;
         }
-    }while(accion != 3);
+    }while(accion != 5);
 }
