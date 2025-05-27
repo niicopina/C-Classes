@@ -27,6 +27,19 @@ class Mascota {
             cout << nombre << " esta muy cansado para seguir y se desmayo" << endl;
         }
     }
+    void cazar(){
+        if(energia >= 50){
+            energia -= 50;
+            cout << nombre << " ha cazado, Que bestia! Energia restante: "
+                 << energia << endl;
+        }else{
+            cout << nombre << " no tiene suficiente energia para cazar" << endl;
+        }
+    }
+    void descansar(){
+        cout << nombre << " esta descansando un poco..." << endl;
+        energia += 300;
+    }
     void mostrar_datos(){
         cout << "Nombre: " << nombre << endl;
         cout << "Raza: " << raza << endl;
