@@ -18,6 +18,15 @@ class Mascota {
     void set_edad(int variable){
         edad = variable;
     }
+    void caminar(){
+        if(energia >= 10){
+            energia -= 10;
+            cout << "Ha caminado, energia restante: " << energia << endl;
+        }else{
+            energia = 0;
+            cout << nombre << " esta muy cansado para seguir y se desmayo" << endl;
+        }
+    }
     void mostrar_datos(){
         cout << "Nombre: " << nombre << endl;
         cout << "Raza: " << raza << endl;
@@ -78,4 +87,24 @@ int main(){
     cout << "Asi que esta es tu mascota!" << endl;
 
     miMascota->mostrar_datos();
+
+    int accion;
+    do{
+        cout << "Que quieres hacer?" << endl;
+        cout << "1. Caminar (-10 energia)" << endl;
+        cout << "2. Mostrar estado" << endl;
+        cout << "3. Salir" << endl;
+        cout << "Elige una opcion: ";
+        cin >> accion;
+        switch(accion){
+            case 1: miMascota->caminar(); break;
+            case 2: miMascota->mostrar_datos(); break;
+            case 3: cout << "Fin del juego"; break;
+            default: cout << "Opcion invalida" << endl;
+        }
+        if(miMascota->energia == 0){
+            cout << miMascota->nombre << " se quedo sin energia, game over" << endl;
+            break;
+        }
+    }while(accion != 3);
 }
