@@ -3,7 +3,17 @@
 using namespace std;
 
 int main(){
-    const int cant_productos = 3;
+
+    string lista[10][2];
+    for(int i = 0; i < 10; i++){
+        cout << "Escriba el producto: ";
+        cin >> lista[i][1];
+        cout << "Cantidad: ";
+        cin >> lista[i][2];
+    }
+
+
+    /*const int cant_productos = 3;
     string productos[cant_productos];
     float precios[cant_productos];
 
@@ -23,5 +33,5 @@ int main(){
     for(int i = 0; i < cant_productos; i++){
         cout << "Producto: " << *(ptr_productos + i) <<
             " - Precio = $" << *(ptr_precios + i ) << endl;
-    }
+    }*/
 }
