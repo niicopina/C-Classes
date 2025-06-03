@@ -92,7 +92,30 @@ class Bolso : public Producto{
 
 int main(){
     Producto* lista_productos[MAX_PROD];
-    
+    int cantidad = 0;
+    int tipoProducto;
+    cout << "Tipo de producto (1. Poncho, 2. Sweater, 3. Bolso): ";
+    cin >> tipoProducto;
+
+    Producto* nuevo;
+    switch(tipoProducto){
+        case 1: nuevo = new Poncho(); break;
+        case 2: nuevo = new Sweater(); break;
+        case 3: nuevo = new Bolso(); break;
+        default: cout << "Seleccion invalida";
+    }
+    string nombre;
+    int precio, cant;
+    cout << "Nombre: ";
+    cin >> nombre;
+    cout << "Precio: $";
+    cin >> precio;
+    cout << "Cantidad: ";
+    cin >> cant;
+
+    nuevo->set_nombre(nombre);
+    nuevo->set_precio(precio);
+    nuevo->set_cantidad(cant);
 }
 
 /*
