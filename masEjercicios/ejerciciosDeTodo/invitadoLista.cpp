@@ -15,10 +15,23 @@ bool yaEstaEnLaLista(const int dni[],int numero,int size){
 int main(){
     const int MAX = 4;
     int dni[MAX];
+    int numero;
+    int cantidad = 0;
 
-    cout << "Cargue los DNI de los invitados: " << endl;
+    cout << "Cargue DNI de los invitados:" << endl;
+    while(cantidad < MAX){
+        cout << "DNI #" << cantidad + 1 << ": ";
+        cin >> numero;
+        if(yaEstaEnLaLista(dni, numero, cantidad)){
+            cout << "Ingrese un DNI distinto..." << endl;
+        }else{
+            dni[cantidad] = numero;
+            cantidad++;
+        }
+    }
+
+    cout << "El listado de invitados queda asi: " << endl;
     for(int i = 0; i < MAX; i++){
-        cout << "DNI #" << i+1 << ": ";
-        cin >> dni[i];
+        cout << "Invitado #" << i+1 << ": " << dni[i] << endl;
     }
 }
